@@ -1,0 +1,177 @@
+
+
+body, html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+header {
+  background-color: lightblue;
+  height: 300px;
+  position: fixed;
+  position: relative;
+  overflow: hidden;
+  transition: all .5s ease;
+  top: 0;
+  width: 100%;
+}
+h1 {
+  text-align: center;
+  margin-top: 0;
+  line-height: 230px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 100;
+  transition: all 0.3s ease;
+}
+header nav a {
+  color: #fff;
+  padding: 10px 15px;
+  line-height: 1;
+  text-decoration: none;
+  border-radius: 2px;
+}
+header nav a:hover {
+  box-shadow: 0 0 0 1px #fff;
+}
+nav {
+  background: rgb(255, 182, 193);
+  color: white;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  height: 60px;
+  line-height: 60px;
+  width: 100%;
+
+}
+section {
+  padding: 20px;
+  margin-bottom: 40px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+/*sticky transition*/
+body.sticky-header {
+  padding-top: 100px;
+}
+body.sticky-header header {
+  height: 60px;
+  background-color: rgba(255, 182, 193, 0.5);
+}
+body.sticky-header header h1 {
+  transform: scale(0, 0);
+}
+
+
+
+.image {
+  width: 80%;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: 1s ease-in;
+  z-index: -1;
+}
+.image:hover {
+  transform: rotateY(180deg);
+}
+
+/*trigger trigger*/
+.trigger {
+  width: 400px;
+  height: 400px;
+  border: 40px solid lightgray;
+  background: url(../img/jack2.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.box {
+  display: inline-block;
+  /*background-color: plum;*/
+  height: 400px;
+  width: 400px;
+  transition: transform 300ms cubic-bezier(0, .47, .32, 1.97);
+  background: url(../img/jack.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.trigger.clicked .box {
+  transform: translate(400px, 350px) rotate(20deg);
+}
+
+.menu {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  transition: 1s;
+  cursor: pointer;
+}
+.icon {
+  height: 14px;
+  width: 80px;
+  top: 30px;
+  background-color: black;
+  border-radius: 20px;
+  position: absolute;
+  transition-duration: 0.5s;
+}
+.icon:before{
+  left: 0;
+  position: absolute;
+  top: -25px;
+  height: 14px;
+  width: 80px;
+  background-color: black;
+  content: "";
+  border-radius: 20px;
+  transition-duration: 0.5s;
+
+}
+.icon:after{
+  left: 0;
+  position: absolute;
+  top: 25px;
+  height: 14px;
+  width: 80px;
+  background-color: black;
+  content: "";
+  border-radius: 20px;
+  transition-duration: 0.5s;
+}
+.burger2 .icon {
+  transition: .5s .5s linear;
+}
+
+.burger2 .icon:after {
+  transition: transform .5s, top 0.5s 0.5s;
+}
+.burger2 .icon:before {
+  transition: transform 0.5s, top 0.5s 0.5s;
+}
+.burger2.open .icon {
+  transition-duration: 0.2s;
+  transition-delay: 0.5s;
+  background: transparent;
+}
+
+.burger2.open .icon:before {
+  transition: top 0.5s, transform 0.5s 0.5s;
+  top: 0px;
+  transform: rotateZ(-45deg);
+}
+
+.burger2.open .icon:after {
+  transition: top 0.4s, transform 0.5s 0.5s;
+  top: 0px;
+  transform: rotateZ(45deg);
+}
