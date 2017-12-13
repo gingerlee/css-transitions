@@ -88,6 +88,7 @@ body.sticky-header header h1 {
 
 /*trigger trigger*/
 .trigger {
+  margin: 0 auto;
   width: 400px;
   height: 400px;
   border: 40px solid lightgray;
@@ -174,4 +175,33 @@ body.sticky-header header h1 {
   transition: top 0.4s, transform 0.5s 0.5s;
   top: 0px;
   transform: rotateZ(45deg);
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* breathing button */
+
+.breath {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  border-radius: 50%;
+  background: rgba(163, 9, 235, 0.53);
+  color: white;
+  animation: breathing 3s ease infinite reverse;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+@keyframes breathing {
+  0% {transform: scale(0.9); background-color: rgba(163, 9, 235, 0.53);}
+  25% {transform: scale(1);}
+  50% {background-color: rgba(210, 74, 123, 0.72);}
+  60% {transform: scale(0.9);}
+  100% {transform: scale(0.9); background-color: rgba(163, 9, 235, 0.53);}
 }
